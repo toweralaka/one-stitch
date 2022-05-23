@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="strip"></div>
+            <img class="lay_up cover_image" src="{% static 'images/home.jpg' %}" />
+            <div class="lay_up intro_text">
+                <div class="text_wrapper">
+                    <h2>I am Olaide</h2>
+                    <p>We are all capable of miracles</p>
+                </div>
+            </div>
+            <div class="lay_up categories_div">
+                <div class="categories_wrap">
+                    <div class="category">
+                        <p>Data Structures</p>
+                    </div>
+                    <div class="category">
+                        <p>Business</p>
+                    </div>
+                    <div class="category">
+                        <p>Code With Me</p>
+                    </div>
+                    <div class="category">
+                        <p>Miscellaneous</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
