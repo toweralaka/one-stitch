@@ -79,19 +79,20 @@ WSGI_APPLICATION = 'onestitch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-try:
-    DATABASE_URL = config('DATABASE_URL')
-except Exception:
-    DATABASES = {
-        'default': {
-            'ENGINE': config('DB_ENGINE'),
-            'NAME': config('DB_NAME', default= BASE_DIR / 'db.sqlite3'),
-            'USER': config('DB_USER'),
-            'PASSWORD': config('DB_PASSWORD'),
-            'HOST': config('DB_HOST'),
-            'PORT': config('DB_PORT', cast=int),
-        }
+DATABASE_URL = config('DATABASE_URL')
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME', default= BASE_DIR / 'db.sqlite3'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', cast=int),
     }
+}
+# DATABASES = {
+#     'default': env.db(),
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
