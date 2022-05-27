@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from decouple import config, Csv
 from pathlib import Path
 
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,14 +82,11 @@ WSGI_APPLICATION = 'onestitch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME', default= BASE_DIR / 'db.sqlite3'),
-    }
+    'default': dj_database_url.parse(config('DATABASE_URL'))
 }
+
 
 # DATABASES = {
 #     'default': {
