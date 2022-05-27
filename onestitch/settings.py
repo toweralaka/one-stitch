@@ -82,7 +82,12 @@ WSGI_APPLICATION = 'onestitch.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASE_URL = config('DATABASE_URL')
-DATABASES['default']['ENGINE'] = config('DB_ENGINE')
+
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE')
+    }
+}
 
 # DATABASES = {
 #     'default': {
