@@ -1,20 +1,9 @@
 from django.conf import settings
 from django.db import models
 
+from core.models import UserProfile
+
 # Create your models here.
-class UserProfile(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, 
-        on_delete=models.SET_NULL, 
-        blank=True, null=True)
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    headshot = models.ImageField(upload_to='author_headshots')
-    is_author = models.BooleanField()
-
-    def __str__(self):
-        return self.name
-
 
 class Blog(models.Model):
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
