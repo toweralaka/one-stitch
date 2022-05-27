@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-body {
+section {
     background-color: #cabca5;
 }
 
@@ -12,11 +12,11 @@ header {
     background-color: aliceblue;
     top: 0;
     left: 0;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
 }
 
-nav {
+.nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,7 +24,12 @@ nav {
     height: 100%;
     align-items: center;
 }
-
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+}
 .logo {
     width: fit-content;
     height: 80px;
@@ -39,7 +44,10 @@ nav {
 .logo a {
     text-decoration: none;
 }
-nav ul {
+.menu {
+    display: none;
+}
+.nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -152,4 +160,49 @@ footer {
 footer a {
     color: aqua;
     text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        height: fit-content;
+    }
+    .top {
+        width: 100%;
+    }
+    .menu {
+        position: absolute;
+        top: 10px;
+        display: block;
+        right: 10px;
+        padding: 10px;
+        box-shadow: 1px 1px 1px 1px #cbab8f;
+        cursor: pointer;
+        height: fit-content;
+        width: fit-content;
+    }
+    .menu:hover{
+        background-color: #cabca5;
+        font-weight: bold;
+    }
+    #nav_links_wrap {
+        display: none;
+        width: 100%;
+    }
+    .menu:hover ~ #nav_links_wrap {
+        display: block;
+        
+    }
+    .nav {
+        flex-direction: column;
+    }
+    .nav ul {
+        width: 100%;
+        padding-left: 0;
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .nav_link {
+        width: 100%;
+    }
 }

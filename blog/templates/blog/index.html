@@ -1,0 +1,65 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="intro">
+    <h1>Welcome</h1>
+    <p>You are welcome</p>
+</div>
+<div class="blog-list">
+    <div class="blog">
+        <div class="blog-img-wrap">
+            <img src="{% static 'images/home.jpg' %}" class="blog-img">
+        </div>
+        <div class="blog-detail-wrap">
+            <div class="blog-detail">
+                <p class="blog-date">{% now 'D, d M Y' %}</p>
+                <h2 class="blog-title">This Title</h2>
+                <p class="blog-summary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptas, natus deleniti sit corrupti beatae dolorum impedit
+                    cum facere possimus sequi? Maxime voluptatibus consectetur
+                    quam magnam? Tempore necessitatibus quaerat magnam excepturi.
+                </p>
+            </div>
+            <div class="read-more"><a href="#">Read more</a></div>
+        </div>
+    </div>
+    <div class="blog">
+        <div class="blog-img-wrap">
+            <img src="{% static 'images/home.jpg' %}" class="blog-img">
+        </div>
+        <div class="blog-detail-wrap">
+            <div class="blog-detail">
+                <p class="blog-date">{% now 'D, d M Y' %}</p>
+                <h2 class="blog-title">This Title</h2>
+                <p class="blog-summary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptas, natus deleniti sit corrupti beatae dolorum impedit
+                    cum facere possimus sequi? Maxime voluptatibus consectetur
+                    quam magnam? Tempore necessitatibus quaerat magnam excepturi.
+                </p>
+            </div>
+            <div class="read-more"><a href="#">Read more</a></div>
+        </div>
+    </div>
+    <div class="blog">
+        <div class="blog-img-wrap">
+            <img src="{% static 'images/home.jpg' %}" class="blog-img">
+        </div>
+        <div class="blog-detail-wrap">
+            <div class="blog-detail">
+                <p class="blog-date">{% now 'D, d M Y' %}</p>
+                <h2 class="blog-title">This Title</h2>
+                <p class="blog-summary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptas, natus deleniti sit corrupti beatae dolorum impedit
+                    cum facere possimus sequi? Maxime voluptatibus consectetur
+                    quam magnam? Tempore necessitatibus quaerat magnam excepturi.
+                </p>
+            </div>
+            <div class="read-more"><a href="#">Read more</a></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -23,8 +23,8 @@
         content="{% block og_image %}{% if about.first.about.social_image %}{{ about.first.about.social_image.url }}{% endif %}{% endblock %}" />
     <meta property="fb:admins" content="{{ about.first.about.facebook }}" />
     {#{% include 'base/css.html' %}#}
-    {% block custom_css %}
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block custom_css %}
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
     <style>
@@ -32,18 +32,26 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="{% url 'home' %}">ONE STITCH</a>
+        <nav class="nav">
+            <div class="top">
+                <div class="logo">
+                    <a href="{% url 'home' %}">ONE STITCH</a>
+                </div>
             </div>
-            <ul>
-                <li class="nav_link">1</li>
-                <li class="nav_link">2</li>
-                <li class="nav_link">3</li>
-                <li class="nav_link">4</li>
-            </ul>
+            <div class="menu">
+                MENU
+            </div>
+            <div id="nav_links_wrap" class="nav_links_wrap">
+                <ul>
+                    <li class="nav_link"><a href="{% url 'blog:blog-list' %}">Blog</a></li>
+                    <li class="nav_link"><a href="{% url 'blog:blog-list' %}">Blog</a></li>
+                    <li class="nav_link"><a href="{% url 'blog:blog-list' %}">Blog</a></li>
+                    <li class="nav_link"><a href="{% url 'blog:blog-list' %}">Blog</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
+    {% block maincontent %}
     {% block content %}{% endblock %}
     <footer>
         <p>Copyright {% now "Y" %}</p>
@@ -55,5 +63,6 @@
             unsplash</a>
         </p>
     </footer>
+    {% endblock %}
 </body>
 </html>
