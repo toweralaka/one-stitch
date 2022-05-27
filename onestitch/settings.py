@@ -85,7 +85,8 @@ DATABASE_URL = config('DATABASE_URL')
 
 DATABASES = {
     'default': {
-        'ENGINE': config('DB_ENGINE')
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME', default= BASE_DIR / 'db.sqlite3'),
     }
 }
 
