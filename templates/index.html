@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block custom_css %}
 
+{% endblock %}
 {% block content %}
     <section>
         <div class="container">
-            <div class="strip"></div>
-            <img class="lay_up cover_image" src="{% static 'images/home.jpg' %}" />
-            <div class="lay_up intro_text">
+            <div class="intro_text">
                 <div class="text_wrapper">
                     <h2>I am Olaide</h2>
                     <p>We are all capable of miracles</p>
                 </div>
             </div>
-            <div class="lay_up categories_div">
+            <div class="cover_image" style="background-image:url({% static 'images/home.jpg' %})" >
+            </div>
+            <div class="categories_div">
                 <div class="categories_wrap">
                     <div class="category">
                         <p>Data Structures</p>
@@ -27,6 +29,8 @@
                         <p>Miscellaneous</p>
                     </div>
                 </div>
+            </div>
+            <div class="lay_up strip"></div>
             </div>
         </div>
     </section>
